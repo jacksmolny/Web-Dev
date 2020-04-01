@@ -1,0 +1,14 @@
+@mixin m-font-face( $fontFamily: 'Font Family', $filePath: 'Font Path', $localName: 'Font Local Name', $weight: 'Font Weight', $style: 'Font Style') {
+  @font-face {
+    font-family: $fontFamily;
+    src: url($filePath + '.eot');
+    src: local($localName),
+            url($filePath + '.eot?#iefix') format('embedded-opentype'),
+            url($filePath + '.woff2') format('woff2'),
+            url($filePath + '.woff') format('woff'),
+            url($filePath + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
